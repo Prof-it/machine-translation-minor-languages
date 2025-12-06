@@ -1,0 +1,82 @@
+{
+  "best_global_step": 631,
+  "best_metric": 0.0,
+  "best_model_checkpoint": "/content/drive/MyDrive/Thesis/test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631",
+  "epoch": 3.0,
+  "eval_steps": 500,
+  "global_step": 1893,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 0.7933359777865926,
+      "grad_norm": 2.0018341541290283,
+      "learning_rate": 1.4727945060750133e-05,
+      "loss": 1.4832,
+      "step": 500
+    },
+    {
+      "epoch": 1.0,
+      "eval_bleu": 0.0,
+      "eval_loss": 1.1562137603759766,
+      "eval_runtime": 505.483,
+      "eval_samples_per_second": 2.495,
+      "eval_steps_per_second": 0.625,
+      "step": 631
+    },
+    {
+      "epoch": 1.5854819516065053,
+      "grad_norm": 2.5559747219085693,
+      "learning_rate": 9.445324881141046e-06,
+      "loss": 1.2033,
+      "step": 1000
+    },
+    {
+      "epoch": 2.0,
+      "eval_bleu": 0.0,
+      "eval_loss": 1.1230450868606567,
+      "eval_runtime": 504.3421,
+      "eval_samples_per_second": 2.5,
+      "eval_steps_per_second": 0.627,
+      "step": 1262
+    },
+    {
+      "epoch": 2.377627925426418,
+      "grad_norm": 1.727364420890808,
+      "learning_rate": 4.1627047015319595e-06,
+      "loss": 1.1206,
+      "step": 1500
+    },
+    {
+      "epoch": 3.0,
+      "eval_bleu": 0.0,
+      "eval_loss": 1.1159477233886719,
+      "eval_runtime": 501.8212,
+      "eval_samples_per_second": 2.513,
+      "eval_steps_per_second": 0.63,
+      "step": 1893
+    }
+  ],
+  "logging_steps": 500,
+  "max_steps": 1893,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 3,
+  "save_steps": 500,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": true
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 4202388294598656.0,
+  "train_batch_size": 4,
+  "trial_name": null,
+  "trial_params": null
+}

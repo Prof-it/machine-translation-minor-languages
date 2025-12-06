@@ -1,0 +1,75 @@
+{
+  "best_global_step": 368,
+  "best_metric": 40.563073777587974,
+  "best_model_checkpoint": "/content/drive/MyDrive/Thesis/eval/nllb-finetuned-odia-german-model-results/checkpoint-368",
+  "epoch": 3.0,
+  "eval_steps": 500,
+  "global_step": 1104,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 1.0,
+      "eval_bleu": 40.563073777587974,
+      "eval_loss": 1.3232014179229736,
+      "eval_runtime": 360.7889,
+      "eval_samples_per_second": 2.04,
+      "eval_steps_per_second": 0.51,
+      "step": 368
+    },
+    {
+      "epoch": 1.3591836734693876,
+      "grad_norm": 1.512778401374817,
+      "learning_rate": 1.0960144927536233e-05,
+      "loss": 1.5767,
+      "step": 500
+    },
+    {
+      "epoch": 2.0,
+      "eval_bleu": 40.563073777587974,
+      "eval_loss": 1.28707754611969,
+      "eval_runtime": 356.1951,
+      "eval_samples_per_second": 2.066,
+      "eval_steps_per_second": 0.517,
+      "step": 736
+    },
+    {
+      "epoch": 2.7183673469387752,
+      "grad_norm": 1.7681635618209839,
+      "learning_rate": 1.9021739130434785e-06,
+      "loss": 1.337,
+      "step": 1000
+    },
+    {
+      "epoch": 3.0,
+      "eval_bleu": 40.563073777587974,
+      "eval_loss": 1.2795804738998413,
+      "eval_runtime": 354.3261,
+      "eval_samples_per_second": 2.077,
+      "eval_steps_per_second": 0.519,
+      "step": 1104
+    }
+  ],
+  "logging_steps": 500,
+  "max_steps": 1104,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 3,
+  "save_steps": 500,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": true
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 2943359777538048.0,
+  "train_batch_size": 4,
+  "trial_name": null,
+  "trial_params": null
+}
