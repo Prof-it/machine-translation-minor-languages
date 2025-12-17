@@ -108,3 +108,7 @@ wandb/
 # 4. PICKLE FILES (Often used for saving scores/metrics)
 *.pkl
 *.pickle
+
+# Allow files specifically in the results folder
+!data/raw/*.txt
+!data/transformed/*.jsonl
