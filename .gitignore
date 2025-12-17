@@ -1,0 +1,110 @@
+# --- Byte-compiled / Optimized / DLL files ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- C extensions ---
+*.so
+
+# --- Distribution / Packaging ---
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- PyInstaller ---
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to avoid cluttering the source
+#  directory with these temporary files.
+*.manifest
+*.spec
+
+# --- Installer logs ---
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Unit test / Coverage reports ---
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# --- Jupyter Notebooks ---
+#  We generally want to keep notebooks, but ignore their checkpoints
+.ipynb_checkpoints
+
+# --- Environments ---
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- IDE Specific (Optional but recommended) ---
+.vscode/
+.idea/
+
+# =======================================================
+#  SPECIFIC TO OUR PROJECT (Machine Translation)
+# =======================================================
+
+# 1. LARGE DATASETS (>100MB)
+# Exclude entire data directories if they contain large files
+/test/data/
+/datasets/
+
+# Exclude specific large file types wherever they are
+*.jsonl
+*.csv
+*.tsv
+*.txt
+*.zip
+*.tar.gz
+*.tgz
+
+# 2. MODEL CHECKPOINTS & WEIGHTS (These are HUGE)
+# Exclude the model directory where you save finetuned models
+/model/
+/eval/
+/checkpoints/
+
+# Exclude specific model extensions
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+
+# 3. WANDB LOGS (Weights & Biases logging folder)
+wandb/
+
+# 4. PICKLE FILES (Often used for saving scores/metrics)
+*.pkl
+*.pickle
