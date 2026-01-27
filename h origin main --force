@@ -1,0 +1,1012 @@
+[33mcommit b5828a5f850d5d5b91a1ee2432eb37c972789212[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Tue Jan 27 14:35:42 2026 +0000
+
+    Track large evaluation artifacts using Git LFS
+
+[33mcommit 2bb865accdab5df88178401e788452d825bf2d9b[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Tue Jan 27 14:27:53 2026 +0000
+
+    Add evaluation metrics, plots, and qualitative results
+
+ eval/ablation-20260127T105019Z-3-001.zip                                                      |       3 [32m+[m
+ eval/ablation_dropout.csv                                                                     |       3 [32m+[m
+ eval/ablation_lr.csv                                                                          |       6 [32m+[m
+ eval/fft_sentence_scores.pkl                                                                  |     Bin [31m6682[m -> [32m0[m bytes
+ eval/fft_sentence_scores_updated.pkl                                                          |     Bin [31m0[m -> [32m6682[m bytes
+ eval/final_sota_comparison_full_testset.csv                                                   |      11 [32m+[m
+ eval/lora-finetuned-odia-german-results-new-v1_experiment_2_stable-20260127T103148Z-3-001.zip |       3 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/README.md                 |     206 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/adapter_config.json       |      41 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/adapter_model.safetensors |     Bin [31m9457520[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/optimizer.pt              |     Bin [31m18997835[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/rng_state.pth             |     Bin [31m14645[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/scaler.pt                 |     Bin [31m1383[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/scheduler.pt              |     Bin [31m1465[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/sentencepiece.bpe.model   |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/special_tokens_map.json   |     255 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/tokenizer.json            | 2314577 [31m-------------------------------------------------[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/tokenizer_config.json     |    1879 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/trainer_state.json        |      84 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/training_args.bin         |     Bin [31m6161[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/README.md                 |     206 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/adapter_config.json       |      41 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/adapter_model.safetensors |     Bin [31m9457520[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/optimizer.pt              |     Bin [31m18997835[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/rng_state.pth             |     Bin [31m14645[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/scaler.pt                 |     Bin [31m1383[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/scheduler.pt              |     Bin [31m1465[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/sentencepiece.bpe.model   |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/special_tokens_map.json   |     255 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/tokenizer.json            | 2314577 [31m-------------------------------------------------[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/tokenizer_config.json     |    1879 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/trainer_state.json        |     100 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/training_args.bin         |     Bin [31m6161[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/config.json                  |      34 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/generation_config.json       |       8 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/optimizer.pt                 |     Bin [31m5125662[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/rng_state.pth                |     Bin [31m14645[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/scaler.pt                    |     Bin [31m1383[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/scheduler.pt                 |     Bin [31m1465[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/sentencepiece.bpe.model      |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/special_tokens_map.json      |     255 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/tokenizer.json               | 2314577 [31m-------------------------------------------------[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/tokenizer_config.json        |    1879 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/trainer_state.json           |      75 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/training_args.bin            |     Bin [31m6097[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/config.json                   |      34 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/generation_config.json        |       8 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/optimizer.pt                  |     Bin [31m5125662[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/rng_state.pth                 |     Bin [31m14645[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/scaler.pt                     |     Bin [31m1383[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/scheduler.pt                  |     Bin [31m1465[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/sentencepiece.bpe.model       |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/special_tokens_map.json       |     255 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/tokenizer.json                | 2314577 [31m-------------------------------------------------[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/tokenizer_config.json         |    1879 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/trainer_state.json            |      59 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/training_args.bin             |     Bin [31m6097[m -> [32m0[m bytes
+ eval/qualitative_examples_german_to_odia.csv                                                  |      11 [32m+[m
+ plots/ablation_cost_analysis.png                                                              |     Bin [31m0[m -> [32m222422[m bytes
+ plots/ablation_loss_dynamics.png                                                              |     Bin [31m0[m -> [32m633722[m bytes
+ plots/ablation_study_summary.png                                                              |     Bin [31m0[m -> [32m307110[m bytes
+ plots/ablation_time_cost.png                                                                  |     Bin [31m0[m -> [32m237708[m bytes
+ plots/baseline_fft_lora_performance_comparison.png                                            |     Bin [31m0[m -> [32m86976[m bytes
+ plots/combined_ablation_study.png                                                             |     Bin [31m0[m -> [32m655480[m bytes
+ plots/efficiency_tradeoff.png                                                                 |     Bin [31m0[m -> [32m1140268[m bytes
+ plots/lora_bleau_score_across_hyperparameter_trials.png                                       |     Bin [31m0[m -> [32m38021[m bytes
+ plots/lora_hyperparameter_analysis.png                                                        |     Bin [31m0[m -> [32m199498[m bytes
+ plots/lora_sota_model_performance_profile.png                                                 |     Bin [31m0[m -> [32m132356[m bytes
+ plots/lora_training_dynamics.png                                                              |     Bin [31m0[m -> [32m92527[m bytes
+ plots/lora_validationloss_bleuscore_across_optuna_trials.png                                  |     Bin [31m0[m -> [32m129017[m bytes
+ plots/lora_vs_baseline_performance_improvement.png                                            |     Bin [31m0[m -> [32m52956[m bytes
+ plots/lora_vs_fft_performance_comparison.png                                                  |     Bin [31m0[m -> [32m47633[m bytes
+ plots/model_benchmarking.png                                                                  |     Bin [31m0[m -> [32m56150[m bytes
+ plots/sentence_length_distribution.png                                                        |     Bin [31m0[m -> [32m71069[m bytes
+ 74 files changed, 37 insertions(+), 9267740 deletions(-)
+
+[33mcommit d4e9afef04d2350c7118a69de23162e3ae9d077e[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Tue Jan 27 14:24:29 2026 +0000
+
+    Add finalized training and evaluation notebooks
+
+ notebooks/01_odia_news_article_web_scraping.ipynb                 |    2 [32m+[m[31m-[m
+ notebooks/02_check_num_of_lines.ipynb                             |    2 [32m+[m[31m-[m
+ notebooks/03_data_instance_creation.ipynb                         |    2 [32m+[m[31m-[m
+ notebooks/04_bidirectional_corpus_create.ipynb                    |    2 [32m+[m[31m-[m
+ notebooks/05_bidirectional_full_fine_tuning_evaluation_NLLB.ipynb | 4477 [32m+[m[31m----------------------------------------------------------------------------[m
+ notebooks/06_bidirectional_LoRA_fine_tuning_evaluation_NLLB.ipynb | 3781 [32m+[m[31m----------------------------------------------------------------[m
+ notebooks/07_ablation_study.ipynb                                 | 4599 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ notebooks/07_final_model_artifact_size.ipynb                      |    1 [31m-[m
+ notebooks/08_ablation_study_plot.ipynb                            |    1 [32m+[m
+ notebooks/08_sampling_analysis_full_fine_tuning_LoRA_NLLB.ipynb   | 1901 [31m---------------------------------[m
+ notebooks/09_model_benchmarking.ipynb                             |    1 [32m+[m
+ notebooks/09_model_deployment.ipynb                               |  728 [31m-------------[m
+ notebooks/10_NLLB_LoRA_Hyperparameter_Analysis.ipynb              |    1 [32m+[m
+ notebooks/10_fully_fine_tuned_nllb_model_load_test.ipynb          |  403 [31m-------[m
+ notebooks/11_LoRA_fine_tuned_nllb_model_load_test.ipynb           |  477 [31m---------[m
+ notebooks/11_Model_Performance_Visualization.ipynb                |    1 [32m+[m
+ notebooks/12_final_model_save_storage_footprint.ipynb             |    1 [32m+[m
+ notebooks/12_fully_fine_tuned_model_web_application.ipynb         | 1427 [31m-------------------------[m
+ notebooks/13_Adapter_based_fine_tuned_model_web_application.ipynb | 1618 [31m----------------------------[m
+ notebooks/13_sampling_analysis_full_fine_tuning_LoRA_NLLB.ipynb   |    1 [32m+[m
+ notebooks/14_data_upload_hf.ipynb                                 |    1 [31m-[m
+ notebooks/14_model_deployment.ipynb                               |    1 [32m+[m
+ notebooks/15_fully_fine_tuned_nllb_model_load_test.ipynb          |    1 [32m+[m
+ notebooks/16_LoRA_fine_tuned_nllb_model_load_test.ipynb           |    1 [32m+[m
+ notebooks/17_data_upload_hf.ipynb                                 |    1 [32m+[m
+ notebooks/18_fully_fine_tuned_model_web_application.ipynb         |    1 [32m+[m
+ notebooks/19_Adapter_based_fine_tuned_model_web_application.ipynb |    1 [32m+[m
+ 27 files changed, 4617 insertions(+), 14816 deletions(-)
+
+[33mcommit f7470e9f56c486855b3223a626afd46baa5252c6[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Tue Jan 27 14:23:22 2026 +0000
+
+    Finalize project structure and repository hygiene
+
+ .gitattributes                                    |    1 [32m+[m
+ .gitignore                                        |  151 [32m+[m[31m-[m
+ data/raw/.gitkeep                                 |    0
+ data/raw/authentic_german_corpus_v1.txt           | 7351 [31m-----------------------------------------------------------------------------------------------[m
+ data/raw/authentic_odia_corpus_v1.txt             | 7351 [31m-----------------------------------------------------------------------------------------------[m
+ data/transformed/.gitkeep                         |    0
+ data/transformed/authentic_corpus.jsonl           | 3676 [31m------------------------------------------------[m
+ data/transformed/authentic_corpus_final.jsonl     | 3676 [31m------------------------------------------------[m
+ data/transformed/bidirectional_corpus.jsonl       | 7352 [31m------------------------------------------------------------------------------------------------[m
+ data/transformed/bidirectional_corpus_final.jsonl | 7352 [31m------------------------------------------------------------------------------------------------[m
+ requirements.txt                                  |   23 [32m+[m
+ 11 files changed, 66 insertions(+), 36867 deletions(-)
+
+[33mcommit fdb8a0fe515ab78ce02c38a19a1052f92a4da7c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/legacy-initial-work[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mlegacy-initial-work[m[33m)[m
+Merge: 417ad74 d598c74
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 20:54:45 2025 +0100
+
+    Merge pull request #13 from Prof-it/refactor/structure-update
+    
+    Added Bengali data which was used for testing by splitting it into chunks of size 90M
+
+[33mcommit d598c746c46c3d8ce51c1fc56ea46b94cba5b7e4[m[33m ([m[1;31morigin/refactor/structure-update[m[33m)[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 19:52:36 2025 +0000
+
+    Added Bengali data which was used for testing by splitting it into chunks of size 90M.
+
+ test/data/new_data/bangla_news_data.json.zip.part_aa | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/bangla_news_data.json.zip.part_ab | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/bangla_news_data.json.zip.part_ac | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/bangla_news_data.json.zip.part_ad | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/bangla_news_data.json.zip.part_ae | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/bangla_news_data.json.zip.part_af | Bin [31m0[m -> [32m91017144[m bytes
+ 6 files changed, 0 insertions(+), 0 deletions(-)
+
+[33mcommit 417ad7477e422823dbe25ded714d1f8597aaa68c[m
+Merge: 7bbb891 0811ba7
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 20:23:46 2025 +0100
+
+    Merge pull request #12 from Prof-it/refactor/structure-update
+    
+    Added German datasets which were used for testing & to store output.
+
+[33mcommit 0811ba7ef207964f46cfb364aa21e4fa2f3351ec[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 19:23:06 2025 +0000
+
+    Added German datasets which were used for testing & to store output.
+
+ test/data/new_data/cleaned/german_news_clean_final_2.jsonl     | 50 [32m++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ test/data/new_data/cleaned/german_news_clean_final_2_new.jsonl | 50 [32m++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ 2 files changed, 100 insertions(+)
+
+[33mcommit 7bbb89195e5115f671385ce16fd5daa14e3f2447[m
+Merge: 4438186 75e0a03
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 20:11:23 2025 +0100
+
+    Merge pull request #11 from Prof-it/refactor/structure-update
+    
+    Add large german dataset, used for testing, by splitting into 90MB chunks
+
+[33mcommit 75e0a03149ac1aee8d88df8d4216f07a063a48ff[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 19:09:54 2025 +0000
+
+    Add large german dataset, used for testing, by splitting into 90MB chunks.
+
+ test/data/new_data/cleaned/german_news_inference.jsonl.zip.part_aa | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/cleaned/german_news_inference.jsonl.zip.part_ab | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/cleaned/german_news_inference.jsonl.zip.part_ac | Bin [31m0[m -> [32m55223078[m bytes
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+[33mcommit 443818652f56655d3d4e0be2bc6fe28d490afbc3[m
+Merge: 47fd706 309bb75
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 19:58:51 2025 +0100
+
+    Merge pull request #10 from Prof-it/refactor/structure-update
+    
+    Added Odia datasets which were used for testing
+
+[33mcommit 309bb758a3e2a3ae69e093052c78927575a56ee4[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:57:18 2025 +0000
+
+    Added Odia datasets which were used for testing by compressing the files.
+
+ test/data/new_data/cleaned/varta_02_cleaned.jsonl.zip             | Bin [31m0[m -> [32m68628898[m bytes
+ test/data/new_data/cleaned/varta_02_sentences_inference.jsonl.zip | Bin [31m0[m -> [32m93470832[m bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+[33mcommit 47fd706576fdcc35aab9dca1cfe6a6338b2bee55[m
+Merge: 3af2bfc 4443c0e
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 19:35:29 2025 +0100
+
+    Merge pull request #9 from Prof-it/refactor/structure-update
+    
+    Add large datasets split into 90MB chunks
+
+[33mcommit 4443c0ed834f39c5b2f190a66b71403f6f99172c[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:32:45 2025 +0000
+
+    Add large datasets split into 90MB chunks
+
+ test/data/new_data/german_news.jsonl.zip.part_aa    | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/german_news.jsonl.zip.part_ab    | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/german_news.jsonl.zip.part_ac    | Bin [31m0[m -> [32m60680187[m bytes
+ test/data/new_data/german_news_data.csv.zip.part_aa | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/german_news_data.csv.zip.part_ab | Bin [31m0[m -> [32m94371840[m bytes
+ test/data/new_data/german_news_data.csv.zip.part_ac | Bin [31m0[m -> [32m59400840[m bytes
+ 6 files changed, 0 insertions(+), 0 deletions(-)
+
+[33mcommit 3af2bfcb12bf088348eb7ec3f38d2f22692780bc[m
+Merge: 8a3493a 0bbbeaf
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 19:22:15 2025 +0100
+
+    Merge pull request #8 from Prof-it/refactor/structure-update
+    
+    Added FLORES-200 Dataset & the Odia dataset used for testing
+
+[33mcommit 0bbbeaf4bdee1d811495535dbac44618f13476de[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:20:38 2025 +0000
+
+    Added FLORES-200 Dataset & the Odia dataset used for testing by compressing both the files.
+
+ test/data/new_data/flores200_dataset.tar.gz | Bin [31m0[m -> [32m25585843[m bytes
+ test/data/new_data/varta_02.json.zip        | Bin [31m0[m -> [32m68799259[m bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+[33mcommit 8a3493a23f0d70d1708fa024cc30a50cfdf9dc64[m
+Merge: 45b0499 4e3c1a4
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:59:41 2025 +0100
+
+    Merge pull request #7 from Prof-it/refactor/structure-update
+    
+    Add complete LoRA fine-tuned NLLB model & Full Fine-tuned NLLB model (without the weight)
+
+[33mcommit 4e3c1a4a564d8fd89947103c74ba26695a8db6b2[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 17:56:04 2025 +0000
+
+    Add complete LoRA fine-tuned NLLB model & Full Fine-tuned NLLB model (without the weight)
+
+ model/lora-odia-german-translator_v2/README.md                           |     206 [32m+[m
+ model/lora-odia-german-translator_v2/adapter_config.json                 |      41 [32m+[m
+ model/lora-odia-german-translator_v2/adapter_model.safetensors           |     Bin [31m0[m -> [32m9457520[m bytes
+ model/lora-odia-german-translator_v2/sentencepiece.bpe.model             |     Bin [31m0[m -> [32m4852054[m bytes
+ model/lora-odia-german-translator_v2/special_tokens_map.json             |     255 [32m+[m
+ model/lora-odia-german-translator_v2/tokenizer.json                      | 2314577 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ model/lora-odia-german-translator_v2/tokenizer_config.json               |    1879 [32m+[m
+ model/lora-odia-german-translator_v2/training_args.bin                   |     Bin [31m0[m -> [32m6161[m bytes
+ model/nllb-odia-german-translator_model_final_v2/config.json             |      34 [32m+[m
+ model/nllb-odia-german-translator_model_final_v2/generation_config.json  |       8 [32m+[m
+ model/nllb-odia-german-translator_model_final_v2/sentencepiece.bpe.model |     Bin [31m0[m -> [32m4852054[m bytes
+ model/nllb-odia-german-translator_model_final_v2/special_tokens_map.json |     255 [32m+[m
+ model/nllb-odia-german-translator_model_final_v2/tokenizer.json          | 2314577 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ model/nllb-odia-german-translator_model_final_v2/tokenizer_config.json   |    1879 [32m+[m
+ model/nllb-odia-german-translator_model_final_v2/training_args.bin       |     Bin [31m0[m -> [32m6097[m bytes
+ 15 files changed, 4633711 insertions(+)
+
+[33mcommit 45b04992c17dd775ab89dde26b8544fd9eb5c278[m
+Merge: b23f2fd 1c6fc99
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:50:13 2025 +0100
+
+    Merge pull request #6 from Prof-it/refactor/structure-update
+    
+    Add FFT evaluation scores and checkpoints (excluding weights)
+
+[33mcommit 1c6fc993d0ecc704d276101b81857ffda89a92a2[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 17:49:22 2025 +0000
+
+    Add FFT evaluation scores and checkpoints (excluding weights)
+
+ eval/fft_sentence_scores.pkl                                                             |     Bin [31m0[m -> [32m6682[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/config.json             |      34 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/generation_config.json  |       8 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/optimizer.pt            |     Bin [31m0[m -> [32m5125662[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/rng_state.pth           |     Bin [31m0[m -> [32m14645[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/scaler.pt               |     Bin [31m0[m -> [32m1383[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/scheduler.pt            |     Bin [31m0[m -> [32m1465[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/sentencepiece.bpe.model |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/special_tokens_map.json |     255 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/tokenizer.json          | 2314577 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/tokenizer_config.json   |    1879 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/trainer_state.json      |      75 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/training_args.bin       |     Bin [31m0[m -> [32m6097[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/config.json              |      34 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/generation_config.json   |       8 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/optimizer.pt             |     Bin [31m0[m -> [32m5125662[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/rng_state.pth            |     Bin [31m0[m -> [32m14645[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/scaler.pt                |     Bin [31m0[m -> [32m1383[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/scheduler.pt             |     Bin [31m0[m -> [32m1465[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/sentencepiece.bpe.model  |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/special_tokens_map.json  |     255 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/tokenizer.json           | 2314577 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/tokenizer_config.json    |    1879 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/trainer_state.json       |      59 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/training_args.bin        |     Bin [31m0[m -> [32m6097[m bytes
+ 25 files changed, 4633640 insertions(+)
+
+[33mcommit b23f2fdcac75607c542a38fa7d681157a9fc877a[m
+Merge: a5e5955 9ff9ddb
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:40:19 2025 +0100
+
+    Merge pull request #5 from Prof-it/refactor/structure-update
+    
+    Add LoRA checkpoints (checkpoint-1472 and 1840)
+
+[33mcommit 9ff9ddb915db9e70f5f0f3ada7dad1a76bc79117[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 17:39:19 2025 +0000
+
+    Add LoRA checkpoints (checkpoint-1472 and 1840)
+
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/README.md                 |     206 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/adapter_config.json       |      41 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/adapter_model.safetensors |     Bin [31m0[m -> [32m9457520[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/optimizer.pt              |     Bin [31m0[m -> [32m18997835[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/rng_state.pth             |     Bin [31m0[m -> [32m14645[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/scaler.pt                 |     Bin [31m0[m -> [32m1383[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/scheduler.pt              |     Bin [31m0[m -> [32m1465[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/sentencepiece.bpe.model   |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/special_tokens_map.json   |     255 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/tokenizer.json            | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/tokenizer_config.json     |    1879 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/trainer_state.json        |      84 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/training_args.bin         |     Bin [31m0[m -> [32m6161[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/README.md                 |     206 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/adapter_config.json       |      41 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/adapter_model.safetensors |     Bin [31m0[m -> [32m9457520[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/optimizer.pt              |     Bin [31m0[m -> [32m18997835[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/rng_state.pth             |     Bin [31m0[m -> [32m14645[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/scaler.pt                 |     Bin [31m0[m -> [32m1383[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/scheduler.pt              |     Bin [31m0[m -> [32m1465[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/sentencepiece.bpe.model   |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/special_tokens_map.json   |     255 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/tokenizer.json            | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/tokenizer_config.json     |    1879 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/trainer_state.json        |     100 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/training_args.bin         |     Bin [31m0[m -> [32m6161[m bytes
+ 26 files changed, 4634100 insertions(+)
+
+[33mcommit a5e595554e9dd31a326c8335f0c0b771ffa5d8c4[m
+Merge: b46cb23 d2cb485
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:31:09 2025 +0100
+
+    Merge pull request #4 from Prof-it/refactor/structure-update
+    
+    data folder added
+
+[33mcommit d2cb485ff4f4cb061212d12d51b19466054b4e27[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 17:28:52 2025 +0000
+
+    data folder added which contains the data which were used for the model development & testing
+
+ .gitignore                                        |    6 [32m+[m[31m-[m
+ data/raw/authentic_german_corpus_v1.txt           | 7351 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ data/raw/authentic_odia_corpus_v1.txt             | 7351 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ data/transformed/authentic_corpus.jsonl           | 3676 [32m++++++++++++++++++++++++++++++++++++++++++++++++[m
+ data/transformed/authentic_corpus_final.jsonl     | 3676 [32m++++++++++++++++++++++++++++++++++++++++++++++++[m
+ data/transformed/bidirectional_corpus.jsonl       | 7352 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ data/transformed/bidirectional_corpus_final.jsonl | 7352 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ 7 files changed, 36763 insertions(+), 1 deletion(-)
+
+[33mcommit b46cb230a54cd8c5eb61a692e2db1ed72699448b[m
+Merge: d48101b 42fcabe
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:23:47 2025 +0100
+
+    Merge pull request #3 from Prof-it/refactor/structure-update
+    
+    Add some small sized cleaned files used for testing & experiment results
+
+[33mcommit 42fcabef303931bdf4e13ff12d76681fb6c9e8f3[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 17:22:14 2025 +0000
+
+    Add some small sized cleaned files used for testing & experiment results (CSVs and small subsets only)
+
+ test/data/new_data/cleaned/bengali_sentences_inference_50.jsonl      |   50 [32m+[m
+ test/data/new_data/cleaned/german_news_clean_final.jsonl             | 7604 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ test/data/new_data/cleaned/german_news_eval_subset.jsonl             |  500 [32m+++++[m
+ test/eval/bengali_to_german_model_translation_comparison_results.csv |   50 [32m+[m
+ test/eval/german_to_bengali_model_translation_comparison_results.csv |   50 [32m+[m
+ test/eval/german_to_odia_model_translation_comparison_results.csv    |   50 [32m+[m
+ test/eval/odia_to_german_model_translation_comparison_results.csv    |   50 [32m+[m
+ 7 files changed, 8354 insertions(+)
+
+[33mcommit d48101b5fe85517f918aacbf72122fce76f1d61d[m
+Merge: 4302a0d a11320a
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 18:04:34 2025 +0100
+
+    Merge pull request #2 from Prof-it/refactor/structure-update
+    
+    Fix: Cleaned invalid widget metadata from Jupyter notebooks
+
+[33mcommit a11320aa66f51df5ab35cc102b42f205201f025b[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 17:00:23 2025 +0000
+
+    Fix: Cleaned invalid widget metadata from Jupyter notebooks
+
+ clean_notebooks.py                                                     |   28 [32m+[m
+ notebooks/05_bidirectional_full_fine_tuning_evaluation_NLLB.ipynb      | 4477 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m[31m-[m
+ notebooks/06_bidirectional_LoRA_fine_tuning_evaluation_NLLB.ipynb      | 3781 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m[31m-[m
+ notebooks/08_sampling_analysis_full_fine_tuning_LoRA_NLLB.ipynb        | 1902 [32m+++++++++++++++++++++++++++++++[m[31m-[m
+ notebooks/09_model_deployment.ipynb                                    |  729 [32m++++++++++++[m[31m-[m
+ notebooks/10_fully_fine_tuned_nllb_model_load_test.ipynb               |  404 [32m++++++[m[31m-[m
+ notebooks/11_LoRA_fine_tuned_nllb_model_load_test.ipynb                |  478 [32m+++++++[m[31m-[m
+ notebooks/12_fully_fine_tuned_model_web_application.ipynb              | 1428 [32m+++++++++++++++++++++++[m[31m-[m
+ notebooks/13_Adapter_based_fine_tuned_model_web_application.ipynb      | 1619 [32m++++++++++++++++++++++++++[m[31m-[m
+ test/notebooks/00_model_benchmarking.ipynb                             | 3044 [32m++++++++++++++++++++++++++++++++++++++++++++++++++[m[31m-[m
+ test/notebooks/03_model_translation_comparison_odia_to_german.ipynb    |  850 [32m++++++++++++++[m[31m-[m
+ test/notebooks/07_model_translation_comparison_german_to_odia.ipynb    |  804 [32m+++++++++++++[m[31m-[m
+ test/notebooks/09_model_translation_comparison_bengali_to_german.ipynb | 1416 [32m+++++++++++++++++++++++[m[31m-[m
+ 13 files changed, 20948 insertions(+), 12 deletions(-)
+
+[33mcommit 4302a0df367571f07408e60ee22e85569cd223b3[m
+Merge: f84f589 375bcc5
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 17:54:14 2025 +0100
+
+    Merge pull request #1 from Prof-it/refactor/structure-update
+    
+    Refactor: Update file structure for publication
+
+[33mcommit 375bcc57062d9ed42ae0427120814b5ce4362573[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Wed Dec 17 16:51:16 2025 +0000
+
+    Refactor: Structure update (added .gitignore for large files)
+
+ .gitignore                                                                                        |     110 [32m+[m
+ data/raw/authentic_german_corpus_v1.txt                                                           |    7351 [31m-[m
+ data/raw/authentic_odia_corpus_v1.txt                                                             |    7351 [31m-[m
+ data/transformed/authentic_corpus.jsonl                                                           |    3676 [31m-[m
+ data/transformed/authentic_corpus_final.jsonl                                                     |    3676 [31m-[m
+ data/transformed/bidirectional_corpus.jsonl                                                       |    7352 [31m-[m
+ data/transformed/bidirectional_corpus_final.jsonl                                                 |    7352 [31m-[m
+ eval/fft_sentence_scores.pkl                                                                      |     Bin [31m6682[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/README.md                                 |     202 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/adapter_config.json                       |      34 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/adapter_model.safetensors                 |     Bin [31m9457520[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/optimizer.pt                              |     Bin [31m18995386[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/rng_state.pth                             |     Bin [31m14244[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/scaler.pt                                 |     Bin [31m988[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/scheduler.pt                              |     Bin [31m1064[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/sentencepiece.bpe.model                   |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/special_tokens_map.json                   |     255 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/tokenizer.json                            | 2314577 [31m---------------------------------------------[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/tokenizer_config.json                     |    1879 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/trainer_state.json                        |      75 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/training_args.bin                         |     Bin [31m5560[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/README.md                                 |     202 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/adapter_config.json                       |      34 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/adapter_model.safetensors                 |     Bin [31m9457520[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/optimizer.pt                              |     Bin [31m18995386[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/rng_state.pth                             |     Bin [31m14244[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/scaler.pt                                 |     Bin [31m988[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/scheduler.pt                              |     Bin [31m1064[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/sentencepiece.bpe.model                   |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/special_tokens_map.json                   |     255 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/tokenizer.json                            | 2314577 [31m---------------------------------------------[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/tokenizer_config.json                     |    1879 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/trainer_state.json                        |     100 [31m-[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/training_args.bin                         |     Bin [31m5560[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/README.md                     |     206 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/adapter_config.json           |      41 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/adapter_model.safetensors     |     Bin [31m9457520[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/optimizer.pt                  |     Bin [31m18997835[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/rng_state.pth                 |     Bin [31m14645[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/scaler.pt                     |     Bin [31m1383[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/scheduler.pt                  |     Bin [31m1465[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/sentencepiece.bpe.model       |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/special_tokens_map.json       |     255 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/tokenizer.json                | 2314577 [31m---------------------------------------------[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/tokenizer_config.json         |    1879 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/trainer_state.json            |      84 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/training_args.bin             |     Bin [31m6097[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/README.md                     |     206 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/adapter_config.json           |      41 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/adapter_model.safetensors     |     Bin [31m9457520[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/optimizer.pt                  |     Bin [31m18997835[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/rng_state.pth                 |     Bin [31m14645[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/scaler.pt                     |     Bin [31m1383[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/scheduler.pt                  |     Bin [31m1465[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/sentencepiece.bpe.model       |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/special_tokens_map.json       |     255 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/tokenizer.json                | 2314577 [31m---------------------------------------------[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/tokenizer_config.json         |    1879 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/trainer_state.json            |     100 [31m-[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/training_args.bin             |     Bin [31m6097[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/config.json                         |      34 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/generation_config.json              |       8 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/optimizer.pt                        |     Bin [31m5125261[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/rng_state.pth                       |     Bin [31m14244[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/scaler.pt                           |     Bin [31m988[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/scheduler.pt                        |     Bin [31m1064[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/sentencepiece.bpe.model             |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/special_tokens_map.json             |     255 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/tokenizer.json                      | 2314577 [31m---------------------------------------------[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/tokenizer_config.json               |    1879 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/trainer_state.json                  |      75 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/training_args.bin                   |     Bin [31m5560[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/config.json                          |      34 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/generation_config.json               |       8 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/optimizer.pt                         |     Bin [31m5125261[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/rng_state.pth                        |     Bin [31m14244[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/scaler.pt                            |     Bin [31m988[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/scheduler.pt                         |     Bin [31m1064[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/sentencepiece.bpe.model              |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/special_tokens_map.json              |     255 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/tokenizer.json                       | 2314577 [31m---------------------------------------------[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/tokenizer_config.json                |    1879 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/trainer_state.json                   |      43 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/training_args.bin                    |     Bin [31m5560[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/config.json                      |      34 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/generation_config.json           |       8 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/optimizer.pt                     |     Bin [31m5125662[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/rng_state.pth                    |     Bin [31m14645[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/scaler.pt                        |     Bin [31m1383[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/scheduler.pt                     |     Bin [31m1465[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/sentencepiece.bpe.model          |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/special_tokens_map.json          |     255 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/tokenizer.json                   | 2314577 [31m---------------------------------------------[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/tokenizer_config.json            |    1879 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/trainer_state.json               |      75 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/training_args.bin                |     Bin [31m6097[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/config.json                       |      34 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/generation_config.json            |       8 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/optimizer.pt                      |     Bin [31m5125662[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/rng_state.pth                     |     Bin [31m14645[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/scaler.pt                         |     Bin [31m1383[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/scheduler.pt                      |     Bin [31m1465[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/sentencepiece.bpe.model           |     Bin [31m4852054[m -> [32m0[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/special_tokens_map.json           |     255 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/tokenizer.json                    | 2314577 [31m---------------------------------------------[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/tokenizer_config.json             |    1879 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/trainer_state.json                |      59 [31m-[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/training_args.bin                 |     Bin [31m6097[m -> [32m0[m bytes
+ ...xt-Token Probability Distributions for the Adapter-Tuned Model (German \342\206\222 Odia).png" |     Bin [31m58942[m -> [32m49511[m bytes
+ images/Next-Token Probability Distributions for the Adapter-Tuned Model (Odia -> German).png      |     Bin [31m0[m -> [32m52281[m bytes
+ images/Next-Token Probability Distributions for the Adapter-Tuned Model (Odia -_ German).png      |     Bin [31m55144[m -> [32m0[m bytes
+ .../Next-Token Probability Distributions for the Baseline Model (German \342\206\222 Odia).png"   |     Bin [31m56478[m -> [32m47273[m bytes
+ images/Next-Token Probability Distributions for the Baseline Model (Odia -> German).png           |     Bin [31m0[m -> [32m51176[m bytes
+ images/Next-Token Probability Distributions for the Baseline Model (Odia -_ German).png           |     Bin [31m58259[m -> [32m0[m bytes
+ ...Token Probability Distributions for the Fully Fine-Tuned Model (German \342\206\222 Odia).png" |     Bin [31m57273[m -> [32m44968[m bytes
+ images/Next-Token Probability Distributions for the Fully Fine-Tuned Model (Odia -> German).png   |     Bin [31m0[m -> [32m52435[m bytes
+ images/Next-Token Probability Distributions for the Fully Fine-Tuned Model (Odia -_ German).png   |     Bin [31m58307[m -> [32m0[m bytes
+ models/.DS_Store                                                                                  |     Bin [31m6148[m -> [32m0[m bytes
+ models/lora-odia-german-translator/README.md                                                      |     202 [31m-[m
+ models/lora-odia-german-translator/adapter_config.json                                            |      34 [31m-[m
+ models/lora-odia-german-translator/adapter_model.safetensors                                      |     Bin [31m9457520[m -> [32m0[m bytes
+ models/lora-odia-german-translator/sentencepiece.bpe.model                                        |     Bin [31m4852054[m -> [32m0[m bytes
+ models/lora-odia-german-translator/special_tokens_map.json                                        |     255 [31m-[m
+ models/lora-odia-german-translator/tokenizer.json                                                 | 2314577 [31m---------------------------------------------[m
+ models/lora-odia-german-translator/tokenizer_config.json                                          |    1879 [31m-[m
+ models/lora-odia-german-translator/training_args.bin                                              |     Bin [31m5560[m -> [32m0[m bytes
+ models/lora-odia-german-translator_v2/README.md                                                   |     206 [31m-[m
+ models/lora-odia-german-translator_v2/adapter_config.json                                         |      41 [31m-[m
+ models/lora-odia-german-translator_v2/adapter_model.safetensors                                   |     Bin [31m9457520[m -> [32m0[m bytes
+ models/lora-odia-german-translator_v2/sentencepiece.bpe.model                                     |     Bin [31m4852054[m -> [32m0[m bytes
+ models/lora-odia-german-translator_v2/special_tokens_map.json                                     |     255 [31m-[m
+ models/lora-odia-german-translator_v2/tokenizer.json                                              | 2314577 [31m---------------------------------------------[m
+ models/lora-odia-german-translator_v2/tokenizer_config.json                                       |    1879 [31m-[m
+ models/lora-odia-german-translator_v2/training_args.bin                                           |     Bin [31m6097[m -> [32m0[m bytes
+ models/nllb-odia-german-translator_model_final/config.json                                        |      34 [31m-[m
+ models/nllb-odia-german-translator_model_final/generation_config.json                             |       8 [31m-[m
+ models/nllb-odia-german-translator_model_final/sentencepiece.bpe.model                            |     Bin [31m4852054[m -> [32m0[m bytes
+ models/nllb-odia-german-translator_model_final/special_tokens_map.json                            |     255 [31m-[m
+ models/nllb-odia-german-translator_model_final/tokenizer.json                                     | 2314577 [31m---------------------------------------------[m
+ models/nllb-odia-german-translator_model_final/tokenizer_config.json                              |    1879 [31m-[m
+ models/nllb-odia-german-translator_model_final/training_args.bin                                  |     Bin [31m5560[m -> [32m0[m bytes
+ models/nllb-odia-german-translator_model_final_v2/config.json                                     |      34 [31m-[m
+ models/nllb-odia-german-translator_model_final_v2/generation_config.json                          |       8 [31m-[m
+ models/nllb-odia-german-translator_model_final_v2/sentencepiece.bpe.model                         |     Bin [31m4852054[m -> [32m0[m bytes
+ models/nllb-odia-german-translator_model_final_v2/special_tokens_map.json                         |     255 [31m-[m
+ models/nllb-odia-german-translator_model_final_v2/tokenizer.json                                  | 2314577 [31m---------------------------------------------[m
+ models/nllb-odia-german-translator_model_final_v2/tokenizer_config.json                           |    1879 [31m-[m
+ models/nllb-odia-german-translator_model_final_v2/training_args.bin                               |     Bin [31m6097[m -> [32m0[m bytes
+ notebooks/01_odia_news_article_web_scraping.ipynb                                                 |       1 [32m+[m
+ notebooks/{check_num_of_lines.ipynb => 02_check_num_of_lines.ipynb}                               |       0
+ notebooks/{final_data_instance_creation.ipynb => 03_data_instance_creation.ipynb}                 |       0
+ notebooks/{bidirectional_corpus_create.ipynb => 04_bidirectional_corpus_create.ipynb}             |       0
+ notebooks/05_bidirectional_full_fine_tuning_evaluation_NLLB.ipynb                                 |       1 [32m+[m
+ notebooks/06_bidirectional_LoRA_fine_tuning_evaluation_NLLB.ipynb                                 |       1 [32m+[m
+ notebooks/07_final_model_artifact_size.ipynb                                                      |       1 [32m+[m
+ notebooks/08_sampling_analysis_full_fine_tuning_LoRA_NLLB.ipynb                                   |       1 [32m+[m
+ notebooks/09_model_deployment.ipynb                                                               |       1 [32m+[m
+ notebooks/10_fully_fine_tuned_nllb_model_load_test.ipynb                                          |       1 [32m+[m
+ notebooks/11_LoRA_fine_tuned_nllb_model_load_test.ipynb                                           |       1 [32m+[m
+ notebooks/12_fully_fine_tuned_model_web_application.ipynb                                         |       1 [32m+[m
+ notebooks/13_Adapter_based_fine_tuned_model_web_application.ipynb                                 |       1 [32m+[m
+ notebooks/14_data_upload_hf.ipynb                                                                 |       1 [32m+[m
+ notebooks/Adapter_based_fine_tuned_model_web_application.ipynb                                    |       1 [31m-[m
+ notebooks/LoRA_fine_tuned_nllb_model_load_test.ipynb                                              |       1 [31m-[m
+ notebooks/bidirectional_LoRA_fine_tuning_evaluation_NLLB.ipynb                                    |       1 [31m-[m
+ notebooks/bidirectional_LoRA_fine_tuning_evaluation_NLLB_v2.ipynb                                 |       1 [31m-[m
+ notebooks/bidirectional_full_fine_tuning_evaluation_NLLB.ipynb                                    |       1 [31m-[m
+ notebooks/bidirectional_full_fine_tuning_evaluation_NLLB_v2.ipynb                                 |       1 [31m-[m
+ notebooks/data_upload_hf.ipynb                                                                    |       1 [31m-[m
+ notebooks/final_artifact_size.ipynb                                                               |       1 [31m-[m
+ notebooks/fully_fine_tuned_model_web_application.ipynb                                            |       1 [31m-[m
+ notebooks/fully_fine_tuned_nllb_model_load_test.ipynb                                             |       1 [31m-[m
+ notebooks/model_deployment.ipynb                                                                  |       1 [31m-[m
+ notebooks/nllb_200_distilled_600M.ipynb                                                           |       1 [31m-[m
+ notebooks/odia_news_article_web_scraping.ipynb                                                    |       1 [31m-[m
+ notebooks/sampling_analysis_full_fine_tuning_LoRA_NLLB.ipynb                                      |       1 [31m-[m
+ test/data/raw/authentic_german_corpus_subpart.txt                                                 |    1499 [31m-[m
+ test/data/raw/authentic_odia_corpus.txt                                                           |    6303 [31m-[m
+ test/data/raw/authentic_odia_corpus_poc_2.txt                                                     |    4921 [31m-[m
+ test/data/raw/authentic_odia_corpus_subpart.txt                                                   |    1499 [31m-[m
+ test/data/raw/synthetic_nllb-200-distilled-600M_german_corpus_poc.txt                             |    4921 [31m-[m
+ test/data/raw/synthetic_nllb-200-distilled-600M_german_corpus_poc_2.txt                           |    4921 [31m-[m
+ test/data/raw/translated_german_corpus.txt                                                        |    6303 [31m-[m
+ test/data/transformed/authentic_corpus.jsonl                                                      |    3676 [31m-[m
+ test/data/transformed/bidirectional_corpus.jsonl                                                  |   12606 [31m-[m
+ test/data/transformed/bidirectional_corpus_subpart.jsonl                                          |    2998 [31m-[m
+ test/data/transformed/complete_corpus.jsonl                                                       |    6303 [31m-[m
+ test/data/transformed/complete_corpus_subpart.jsonl                                               |    1499 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/config.json                         |      34 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/generation_config.json              |       8 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/optimizer.pt                        |     Bin [31m5125261[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/rng_state.pth                       |     Bin [31m14244[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/scaler.pt                           |     Bin [31m988[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/scheduler.pt                        |     Bin [31m1064[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/sentencepiece.bpe.model             |     Bin [31m4852054[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/special_tokens_map.json             |     255 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/tokenizer.json                      | 2314577 [31m---------------------------------------------[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/tokenizer_config.json               |    1879 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/trainer_state.json                  |      45 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/training_args.bin                   |     Bin [31m5560[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/config.json                         |      34 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/generation_config.json              |       8 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/optimizer.pt                        |     Bin [31m5125261[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/rng_state.pth                       |     Bin [31m14244[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/scaler.pt                           |     Bin [31m988[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/scheduler.pt                        |     Bin [31m1064[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/sentencepiece.bpe.model             |     Bin [31m4852054[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/special_tokens_map.json             |     255 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/tokenizer.json                      | 2314577 [31m---------------------------------------------[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/tokenizer_config.json               |    1879 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/trainer_state.json                  |      74 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/training_args.bin                   |     Bin [31m5560[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/config.json                        |      34 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/generation_config.json             |       8 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/optimizer.pt                       |     Bin [31m5125261[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/rng_state.pth                      |     Bin [31m14244[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/scaler.pt                          |     Bin [31m988[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/scheduler.pt                       |     Bin [31m1064[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/sentencepiece.bpe.model            |     Bin [31m4852054[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/special_tokens_map.json            |     255 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/tokenizer.json                     | 2314577 [31m---------------------------------------------[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/tokenizer_config.json              |    1879 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/trainer_state.json                 |      82 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/training_args.bin                  |     Bin [31m5560[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/config.json                         |      34 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/generation_config.json              |       8 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/optimizer.pt                        |     Bin [31m5125261[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/rng_state.pth                       |     Bin [31m14244[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/scaler.pt                           |     Bin [31m988[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/scheduler.pt                        |     Bin [31m1064[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/sentencepiece.bpe.model             |     Bin [31m4852054[m -> [32m0[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/special_tokens_map.json             |     255 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/tokenizer.json                      | 2314577 [31m---------------------------------------------[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/tokenizer_config.json               |    1879 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/trainer_state.json                  |      50 [31m-[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/training_args.bin                   |     Bin [31m5560[m -> [32m0[m bytes
+ test/model/final-odia-german-translator_test_1/config.json                                        |      34 [31m-[m
+ test/model/final-odia-german-translator_test_1/generation_config.json                             |       8 [31m-[m
+ test/model/final-odia-german-translator_test_1/sentencepiece.bpe.model                            |     Bin [31m4852054[m -> [32m0[m bytes
+ test/model/final-odia-german-translator_test_1/special_tokens_map.json                            |     255 [31m-[m
+ test/model/final-odia-german-translator_test_1/tokenizer.json                                     | 2314577 [31m---------------------------------------------[m
+ test/model/final-odia-german-translator_test_1/tokenizer_config.json                              |    1879 [31m-[m
+ test/model/final-odia-german-translator_test_1/training_args.bin                                  |     Bin [31m5560[m -> [32m0[m bytes
+ test/model/final-odia-german-translator_test_2/config.json                                        |      34 [31m-[m
+ test/model/final-odia-german-translator_test_2/generation_config.json                             |       8 [31m-[m
+ test/model/final-odia-german-translator_test_2/sentencepiece.bpe.model                            |     Bin [31m4852054[m -> [32m0[m bytes
+ test/model/final-odia-german-translator_test_2/special_tokens_map.json                            |     255 [31m-[m
+ test/model/final-odia-german-translator_test_2/tokenizer.json                                     | 2314577 [31m---------------------------------------------[m
+ test/model/final-odia-german-translator_test_2/tokenizer_config.json                              |    1879 [31m-[m
+ test/model/final-odia-german-translator_test_2/training_args.bin                                  |     Bin [31m5560[m -> [32m0[m bytes
+ test/notebooks/00_model_benchmarking.ipynb                                                        |       1 [32m+[m
+ test/notebooks/01_json_to_jsonl_conversion.ipynb                                                  |       1 [32m+[m
+ test/notebooks/02_odia_sentence_splitting_inference.ipynb                                         |       1 [32m+[m
+ test/notebooks/03_model_translation_comparison_odia_to_german.ipynb                               |       1 [32m+[m
+ test/notebooks/04_csv_to_jsonl_german_news_data.ipynb                                             |       1 [32m+[m
+ test/notebooks/05_cleaning_german_data.ipynb                                                      |       1 [32m+[m
+ test/notebooks/06_final_inference_german_data_creation.ipynb                                      |       1 [32m+[m
+ test/notebooks/07_model_translation_comparison_german_to_odia.ipynb                               |       1 [32m+[m
+ test/notebooks/08_Bengali_data_clean_transform.ipynb                                              |       1 [32m+[m
+ test/notebooks/09_model_translation_comparison_bengali_to_german.ipynb                            |       1 [32m+[m
+ test/notebooks/10_model_translation_comparison_german_to_bengali.ipynb                            |       1 [32m+[m
+ test/notebooks/final_corpus_generation_merging_files.ipynb                                        |       1 [31m-[m
+ test/notebooks/poc1_bidirectional_fine_tuning_evaluation_NLLB.ipynb                               |       1 [31m-[m
+ test/notebooks/poc1_fine_tuning_evaluation_NLLB.ipynb                                             |       1 [31m-[m
+ test/notebooks/poc2_fine_tuning_evaluation_NLLB.ipynb                                             |       1 [31m-[m
+ test/notebooks/poc4_fine_tuning_evaluation_NLLB.ipynb                                             |       1 [31m-[m
+ test/notebooks/synthetic_data_generation.ipynb                                                    |       1 [31m-[m
+ 267 files changed, 132 insertions(+), 41797840 deletions(-)
+
+[33mcommit f84f589cf895b2060c05df109c0754a3cefe0455[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Sat Dec 6 11:34:52 2025 +0000
+
+    After successful creation & testing of models in Google Colab, models are added.
+
+ models/.DS_Store                                                          |     Bin [31m0[m -> [32m6148[m bytes
+ models/lora-odia-german-translator/README.md                              |     202 [32m+[m
+ models/lora-odia-german-translator/adapter_config.json                    |      34 [32m+[m
+ models/lora-odia-german-translator/adapter_model.safetensors              |     Bin [31m0[m -> [32m9457520[m bytes
+ models/lora-odia-german-translator/sentencepiece.bpe.model                |     Bin [31m0[m -> [32m4852054[m bytes
+ models/lora-odia-german-translator/special_tokens_map.json                |     255 [32m+[m
+ models/lora-odia-german-translator/tokenizer.json                         | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ models/lora-odia-german-translator/tokenizer_config.json                  |    1879 [32m+[m
+ models/lora-odia-german-translator/training_args.bin                      |     Bin [31m0[m -> [32m5560[m bytes
+ models/lora-odia-german-translator_v2/README.md                           |     206 [32m+[m
+ models/lora-odia-german-translator_v2/adapter_config.json                 |      41 [32m+[m
+ models/lora-odia-german-translator_v2/adapter_model.safetensors           |     Bin [31m0[m -> [32m9457520[m bytes
+ models/lora-odia-german-translator_v2/sentencepiece.bpe.model             |     Bin [31m0[m -> [32m4852054[m bytes
+ models/lora-odia-german-translator_v2/special_tokens_map.json             |     255 [32m+[m
+ models/lora-odia-german-translator_v2/tokenizer.json                      | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ models/lora-odia-german-translator_v2/tokenizer_config.json               |    1879 [32m+[m
+ models/lora-odia-german-translator_v2/training_args.bin                   |     Bin [31m0[m -> [32m6097[m bytes
+ models/nllb-odia-german-translator_model_final/config.json                |      34 [32m+[m
+ models/nllb-odia-german-translator_model_final/generation_config.json     |       8 [32m+[m
+ models/nllb-odia-german-translator_model_final/sentencepiece.bpe.model    |     Bin [31m0[m -> [32m4852054[m bytes
+ models/nllb-odia-german-translator_model_final/special_tokens_map.json    |     255 [32m+[m
+ models/nllb-odia-german-translator_model_final/tokenizer.json             | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ models/nllb-odia-german-translator_model_final/tokenizer_config.json      |    1879 [32m+[m
+ models/nllb-odia-german-translator_model_final/training_args.bin          |     Bin [31m0[m -> [32m5560[m bytes
+ models/nllb-odia-german-translator_model_final_v2/config.json             |      34 [32m+[m
+ models/nllb-odia-german-translator_model_final_v2/generation_config.json  |       8 [32m+[m
+ models/nllb-odia-german-translator_model_final_v2/sentencepiece.bpe.model |     Bin [31m0[m -> [32m4852054[m bytes
+ models/nllb-odia-german-translator_model_final_v2/special_tokens_map.json |     255 [32m+[m
+ models/nllb-odia-german-translator_model_final_v2/tokenizer.json          | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ models/nllb-odia-german-translator_model_final_v2/tokenizer_config.json   |    1879 [32m+[m
+ models/nllb-odia-german-translator_model_final_v2/training_args.bin       |     Bin [31m0[m -> [32m6097[m bytes
+ 31 files changed, 9267411 insertions(+)
+
+[33mcommit d6bc0a281e4ebf74b3fab0a56d0ce5deceae386c[m
+Author: Abhinandan Samal <161202411+abhinandansamal@users.noreply.github.com>
+Date:   Sat Dec 6 11:26:59 2025 +0000
+
+    After successful testing in Google Colab with GPU access, folder & files added.
+
+ data/raw/authentic_german_corpus_v1.txt                                                           |    7351 [32m+[m
+ data/raw/authentic_odia_corpus_v1.txt                                                             |    7351 [32m+[m
+ data/transformed/authentic_corpus.jsonl                                                           |    3676 [32m+[m
+ data/transformed/authentic_corpus_final.jsonl                                                     |    3676 [32m+[m
+ data/transformed/bidirectional_corpus.jsonl                                                       |    7352 [32m+[m
+ data/transformed/bidirectional_corpus_final.jsonl                                                 |    7352 [32m+[m
+ eval/fft_sentence_scores.pkl                                                                      |     Bin [31m0[m -> [32m6682[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/README.md                                 |     202 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/adapter_config.json                       |      34 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/adapter_model.safetensors                 |     Bin [31m0[m -> [32m9457520[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/optimizer.pt                              |     Bin [31m0[m -> [32m18995386[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/rng_state.pth                             |     Bin [31m0[m -> [32m14244[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/scaler.pt                                 |     Bin [31m0[m -> [32m988[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/scheduler.pt                              |     Bin [31m0[m -> [32m1064[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/sentencepiece.bpe.model                   |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/special_tokens_map.json                   |     255 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/tokenizer.json                            | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/tokenizer_config.json                     |    1879 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/trainer_state.json                        |      75 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1104/training_args.bin                         |     Bin [31m0[m -> [32m5560[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/README.md                                 |     202 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/adapter_config.json                       |      34 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/adapter_model.safetensors                 |     Bin [31m0[m -> [32m9457520[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/optimizer.pt                              |     Bin [31m0[m -> [32m18995386[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/rng_state.pth                             |     Bin [31m0[m -> [32m14244[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/scaler.pt                                 |     Bin [31m0[m -> [32m988[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/scheduler.pt                              |     Bin [31m0[m -> [32m1064[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/sentencepiece.bpe.model                   |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/special_tokens_map.json                   |     255 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/tokenizer.json                            | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/tokenizer_config.json                     |    1879 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/trainer_state.json                        |     100 [32m+[m
+ eval/lora-finetuned-odia-german-results/checkpoint-1840/training_args.bin                         |     Bin [31m0[m -> [32m5560[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/README.md                     |     206 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/adapter_config.json           |      41 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/adapter_model.safetensors     |     Bin [31m0[m -> [32m9457520[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/optimizer.pt                  |     Bin [31m0[m -> [32m18997835[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/rng_state.pth                 |     Bin [31m0[m -> [32m14645[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/scaler.pt                     |     Bin [31m0[m -> [32m1383[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/scheduler.pt                  |     Bin [31m0[m -> [32m1465[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/sentencepiece.bpe.model       |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/special_tokens_map.json       |     255 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/tokenizer.json                | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/tokenizer_config.json         |    1879 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/trainer_state.json            |      84 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1472/training_args.bin             |     Bin [31m0[m -> [32m6097[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/README.md                     |     206 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/adapter_config.json           |      41 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/adapter_model.safetensors     |     Bin [31m0[m -> [32m9457520[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/optimizer.pt                  |     Bin [31m0[m -> [32m18997835[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/rng_state.pth                 |     Bin [31m0[m -> [32m14645[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/scaler.pt                     |     Bin [31m0[m -> [32m1383[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/scheduler.pt                  |     Bin [31m0[m -> [32m1465[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/sentencepiece.bpe.model       |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/special_tokens_map.json       |     255 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/tokenizer.json                | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/tokenizer_config.json         |    1879 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/trainer_state.json            |     100 [32m+[m
+ eval/lora-finetuned-odia-german-results_v2_fft_lora/checkpoint-1840/training_args.bin             |     Bin [31m0[m -> [32m6097[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/config.json                         |      34 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/generation_config.json              |       8 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/optimizer.pt                        |     Bin [31m0[m -> [32m5125261[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/rng_state.pth                       |     Bin [31m0[m -> [32m14244[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/scaler.pt                           |     Bin [31m0[m -> [32m988[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/scheduler.pt                        |     Bin [31m0[m -> [32m1064[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/sentencepiece.bpe.model             |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/special_tokens_map.json             |     255 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/tokenizer.json                      | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/tokenizer_config.json               |    1879 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/trainer_state.json                  |      75 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-1104/training_args.bin                   |     Bin [31m0[m -> [32m5560[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/config.json                          |      34 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/generation_config.json               |       8 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/optimizer.pt                         |     Bin [31m0[m -> [32m5125261[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/rng_state.pth                        |     Bin [31m0[m -> [32m14244[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/scaler.pt                            |     Bin [31m0[m -> [32m988[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/scheduler.pt                         |     Bin [31m0[m -> [32m1064[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/sentencepiece.bpe.model              |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/special_tokens_map.json              |     255 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/tokenizer.json                       | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/tokenizer_config.json                |    1879 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/trainer_state.json                   |      43 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results/checkpoint-368/training_args.bin                    |     Bin [31m0[m -> [32m5560[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/config.json                      |      34 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/generation_config.json           |       8 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/optimizer.pt                     |     Bin [31m0[m -> [32m5125662[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/rng_state.pth                    |     Bin [31m0[m -> [32m14645[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/scaler.pt                        |     Bin [31m0[m -> [32m1383[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/scheduler.pt                     |     Bin [31m0[m -> [32m1465[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/sentencepiece.bpe.model          |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/special_tokens_map.json          |     255 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/tokenizer.json                   | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/tokenizer_config.json            |    1879 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/trainer_state.json               |      75 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-1104/training_args.bin                |     Bin [31m0[m -> [32m6097[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/config.json                       |      34 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/generation_config.json            |       8 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/optimizer.pt                      |     Bin [31m0[m -> [32m5125662[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/rng_state.pth                     |     Bin [31m0[m -> [32m14645[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/scaler.pt                         |     Bin [31m0[m -> [32m1383[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/scheduler.pt                      |     Bin [31m0[m -> [32m1465[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/sentencepiece.bpe.model           |     Bin [31m0[m -> [32m4852054[m bytes
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/special_tokens_map.json           |     255 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/tokenizer.json                    | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/tokenizer_config.json             |    1879 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/trainer_state.json                |      59 [32m+[m
+ eval/nllb-finetuned-odia-german-model-results_v2/checkpoint-736/training_args.bin                 |     Bin [31m0[m -> [32m6097[m bytes
+ images/Experimental Workflow _ Mermaid Chart-2025-07-11-132403.png                                |     Bin [31m0[m -> [32m309647[m bytes
+ ...xt-Token Probability Distributions for the Adapter-Tuned Model (German \342\206\222 Odia).png" |     Bin [31m0[m -> [32m58942[m bytes
+ images/Next-Token Probability Distributions for the Adapter-Tuned Model (Odia -_ German).png      |     Bin [31m0[m -> [32m55144[m bytes
+ .../Next-Token Probability Distributions for the Baseline Model (German \342\206\222 Odia).png"   |     Bin [31m0[m -> [32m56478[m bytes
+ images/Next-Token Probability Distributions for the Baseline Model (Odia -_ German).png           |     Bin [31m0[m -> [32m58259[m bytes
+ ...Token Probability Distributions for the Fully Fine-Tuned Model (German \342\206\222 Odia).png" |     Bin [31m0[m -> [32m57273[m bytes
+ images/Next-Token Probability Distributions for the Fully Fine-Tuned Model (Odia -_ German).png   |     Bin [31m0[m -> [32m58307[m bytes
+ images/data_preparation_pipeline.drawio                                                           |     212 [32m+[m
+ images/project_flowchart.png                                                                      |     Bin [31m0[m -> [32m85094[m bytes
+ notebooks/Adapter_based_fine_tuned_model_web_application.ipynb                                    |       1 [32m+[m
+ notebooks/LoRA_fine_tuned_nllb_model_load_test.ipynb                                              |       1 [32m+[m
+ notebooks/bidirectional_LoRA_fine_tuning_evaluation_NLLB.ipynb                                    |       1 [32m+[m
+ notebooks/bidirectional_LoRA_fine_tuning_evaluation_NLLB_v2.ipynb                                 |       1 [32m+[m
+ notebooks/bidirectional_corpus_create.ipynb                                                       |       1 [32m+[m
+ notebooks/bidirectional_full_fine_tuning_evaluation_NLLB.ipynb                                    |       1 [32m+[m
+ notebooks/bidirectional_full_fine_tuning_evaluation_NLLB_v2.ipynb                                 |       1 [32m+[m
+ notebooks/check_num_of_lines.ipynb                                                                |       1 [32m+[m
+ notebooks/data_upload_hf.ipynb                                                                    |       1 [32m+[m
+ notebooks/final_artifact_size.ipynb                                                               |       1 [32m+[m
+ notebooks/final_data_instance_creation.ipynb                                                      |       1 [32m+[m
+ notebooks/fully_fine_tuned_model_web_application.ipynb                                            |       1 [32m+[m
+ notebooks/fully_fine_tuned_nllb_model_load_test.ipynb                                             |       1 [32m+[m
+ notebooks/model_deployment.ipynb                                                                  |       1 [32m+[m
+ notebooks/nllb_200_distilled_600M.ipynb                                                           |       1 [32m+[m
+ notebooks/odia_news_article_web_scraping.ipynb                                                    |       1 [32m+[m
+ notebooks/sampling_analysis_full_fine_tuning_LoRA_NLLB.ipynb                                      |       1 [32m+[m
+ test/data/raw/authentic_german_corpus_subpart.txt                                                 |    1499 [32m+[m
+ test/data/raw/authentic_odia_corpus.txt                                                           |    6303 [32m+[m
+ test/data/raw/authentic_odia_corpus_poc_2.txt                                                     |    4921 [32m+[m
+ test/data/raw/authentic_odia_corpus_subpart.txt                                                   |    1499 [32m+[m
+ test/data/raw/synthetic_nllb-200-distilled-600M_german_corpus_poc.txt                             |    4921 [32m+[m
+ test/data/raw/synthetic_nllb-200-distilled-600M_german_corpus_poc_2.txt                           |    4921 [32m+[m
+ test/data/raw/translated_german_corpus.txt                                                        |    6303 [32m+[m
+ test/data/transformed/authentic_corpus.jsonl                                                      |    3676 [32m+[m
+ test/data/transformed/bidirectional_corpus.jsonl                                                  |   12606 [32m+[m
+ test/data/transformed/bidirectional_corpus_subpart.jsonl                                          |    2998 [32m+[m
+ test/data/transformed/complete_corpus.jsonl                                                       |    6303 [32m+[m
+ test/data/transformed/complete_corpus_subpart.jsonl                                               |    1499 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/config.json                         |      34 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/generation_config.json              |       8 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/optimizer.pt                        |     Bin [31m0[m -> [32m5125261[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/rng_state.pth                       |     Bin [31m0[m -> [32m14244[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/scaler.pt                           |     Bin [31m0[m -> [32m988[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/scheduler.pt                        |     Bin [31m0[m -> [32m1064[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/sentencepiece.bpe.model             |     Bin [31m0[m -> [32m4852054[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/special_tokens_map.json             |     255 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/tokenizer.json                      | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/tokenizer_config.json               |    1879 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/trainer_state.json                  |      45 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-316/training_args.bin                   |     Bin [31m0[m -> [32m5560[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/config.json                         |      34 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/generation_config.json              |       8 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/optimizer.pt                        |     Bin [31m0[m -> [32m5125261[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/rng_state.pth                       |     Bin [31m0[m -> [32m14244[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/scaler.pt                           |     Bin [31m0[m -> [32m988[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/scheduler.pt                        |     Bin [31m0[m -> [32m1064[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/sentencepiece.bpe.model             |     Bin [31m0[m -> [32m4852054[m bytes
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/special_tokens_map.json             |     255 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/tokenizer.json                      | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/tokenizer_config.json               |    1879 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/trainer_state.json                  |      74 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_1/checkpoint-948/training_args.bin                   |     Bin [31m0[m -> [32m5560[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/config.json                        |      34 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/generation_config.json             |       8 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/optimizer.pt                       |     Bin [31m0[m -> [32m5125261[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/rng_state.pth                      |     Bin [31m0[m -> [32m14244[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/scaler.pt                          |     Bin [31m0[m -> [32m988[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/scheduler.pt                       |     Bin [31m0[m -> [32m1064[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/sentencepiece.bpe.model            |     Bin [31m0[m -> [32m4852054[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/special_tokens_map.json            |     255 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/tokenizer.json                     | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/tokenizer_config.json              |    1879 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/trainer_state.json                 |      82 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-1893/training_args.bin                  |     Bin [31m0[m -> [32m5560[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/config.json                         |      34 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/generation_config.json              |       8 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/optimizer.pt                        |     Bin [31m0[m -> [32m5125261[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/rng_state.pth                       |     Bin [31m0[m -> [32m14244[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/scaler.pt                           |     Bin [31m0[m -> [32m988[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/scheduler.pt                        |     Bin [31m0[m -> [32m1064[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/sentencepiece.bpe.model             |     Bin [31m0[m -> [32m4852054[m bytes
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/special_tokens_map.json             |     255 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/tokenizer.json                      | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/tokenizer_config.json               |    1879 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/trainer_state.json                  |      50 [32m+[m
+ test/eval/nllb-finetuned-odia-german-results_2/checkpoint-631/training_args.bin                   |     Bin [31m0[m -> [32m5560[m bytes
+ test/model/final-odia-german-translator_test_1/config.json                                        |      34 [32m+[m
+ test/model/final-odia-german-translator_test_1/generation_config.json                             |       8 [32m+[m
+ test/model/final-odia-german-translator_test_1/sentencepiece.bpe.model                            |     Bin [31m0[m -> [32m4852054[m bytes
+ test/model/final-odia-german-translator_test_1/special_tokens_map.json                            |     255 [32m+[m
+ test/model/final-odia-german-translator_test_1/tokenizer.json                                     | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ test/model/final-odia-german-translator_test_1/tokenizer_config.json                              |    1879 [32m+[m
+ test/model/final-odia-german-translator_test_1/training_args.bin                                  |     Bin [31m0[m -> [32m5560[m bytes
+ test/model/final-odia-german-translator_test_2/config.json                                        |      34 [32m+[m
+ test/model/final-odia-german-translator_test_2/generation_config.json                             |       8 [32m+[m
+ test/model/final-odia-german-translator_test_2/sentencepiece.bpe.model                            |     Bin [31m0[m -> [32m4852054[m bytes
+ test/model/final-odia-german-translator_test_2/special_tokens_map.json                            |     255 [32m+[m
+ test/model/final-odia-german-translator_test_2/tokenizer.json                                     | 2314577 [32m+++++++++++++++++++++++++++++++++++++++++++++[m
+ test/model/final-odia-german-translator_test_2/tokenizer_config.json                              |    1879 [32m+[m
+ test/model/final-odia-german-translator_test_2/training_args.bin                                  |     Bin [31m0[m -> [32m5560[m bytes
+ test/notebooks/final_corpus_generation_merging_files.ipynb                                        |       1 [32m+[m
+ test/notebooks/poc1_bidirectional_fine_tuning_evaluation_NLLB.ipynb                               |       1 [32m+[m
+ test/notebooks/poc1_fine_tuning_evaluation_NLLB.ipynb                                             |       1 [32m+[m
+ test/notebooks/poc2_fine_tuning_evaluation_NLLB.ipynb                                             |       1 [32m+[m
+ test/notebooks/poc4_fine_tuning_evaluation_NLLB.ipynb                                             |       1 [32m+[m
+ test/notebooks/synthetic_data_generation.ipynb                                                    |       1 [32m+[m
+ 213 files changed, 32530644 insertions(+)
+
+[33mcommit 222d868ee53cb23f3c73a8adbb025ad3eaa330d6[m
+Author: Prof. Dr.rer.nat. Tianxiang Lu, SFHEA <148005133+Prof-it@users.noreply.github.com>
+Date:   Fri Dec 5 02:05:02 2025 +0100
+
+    Initial commit
+
+ README.md | 2 [32m++[m
+ 1 file changed, 2 insertions(+)
