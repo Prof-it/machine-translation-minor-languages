@@ -200,3 +200,5 @@ If you wish to reproduce this research step-by-step, follow the notebooks in the
 👉 `15_fully_fine_tuned_nllb_model_load_test.ipynb` & `16_LoRA_fine_tuned_nllb_model_load_test.ipynb`: Inference load testing.
 
 👉 `18_fully_fine_tuned_model_web_application.ipynb` & `19_Adapter_based_fine_tuned_model_web_application.ipynb`: Gradio UI development.
+
+#### Models deployed in HuggingFace: https://huggingface.co/abhinandansamal/models
