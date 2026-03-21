@@ -1,4 +1,4 @@
-# machine-translation-minor-languages
+# LoRA Bidirectional Neural Machine Translation (NMT) - Odia <-> German
 This is for collaboration and sharing the code for a paper working on machine translation for minor languages
 
 [![Hugging Face Model](https://img.shields.io/badge/🤗%20Hugging%20Face-LoRA%20Model-blue)](https://huggingface.co/abhinandansamal/nllb-200-distilled-600M-LoRA-finetuned-odia-german-bidirectional)
