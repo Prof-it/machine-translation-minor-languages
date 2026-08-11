@@ -157,7 +157,9 @@ Open the respective notebooks in your environment (or Google Colab) and run all 
 │   ├── 16_LoRA_fine_tuned_nllb_model_load_test.ipynb
 │   ├── 17_data_upload_hf.ipynb
 │   ├── 18_fully_fine_tuned_model_web_application.ipynb
-│   └── 19_Adapter_based_fine_tuned_model_web_application.ipynb
+│   ├── 19_Adapter_based_fine_tuned_model_web_application.ipynb
+|   ├── 20_data_domain_composition.ipynb
+|   └── 21_type_token_ratio_calculation.ipynb
 ├── plots/                             # Publication-ready visualizations (heatmaps, radar charts, etc.)
 ├── clean_notebooks.py                 # Utility script for cleaning notebook metadata/outputs
 ├── requirements.txt                   # Project dependencies
@@ -201,4 +203,15 @@ If you wish to reproduce this research step-by-step, follow the notebooks in the
 
 👉 `18_fully_fine_tuned_model_web_application.ipynb` & `19_Adapter_based_fine_tuned_model_web_application.ipynb`: Gradio UI development.
 
+👉 `20_data_domain_composition.ipynb`: Dataset domain composition.
+
+👉 `21_type_token_ratio_calculation.ipynb`: Type token ratio calculation.
+
 #### Models deployed in HuggingFace: https://huggingface.co/abhinandansamal/models
+#### [Full Finetuned NLLB Bidirectional Translator Application](https://huggingface.co/spaces/abhinandansamal/Full-Finetuned-NLLB-Bidirectional-Odia-German-Translator)
+
+<img width="1450" height="618" alt="image" src="https://github.com/user-attachments/assets/9e1ea552-e21f-4660-ab21-ea14b88ebe65" />
+
+#### [QLoRA Fine-tuned NLLB Bidirectional Translator Application](https://huggingface.co/spaces/abhinandansamal/Adapter-based-Odia-German-Translator)
+
+<img width="1450" height="533" alt="image" src="https://github.com/user-attachments/assets/94380a9e-cfcd-480b-91e5-2c7c0cccce60" />
