@@ -33,7 +33,12 @@ The study explores the fine-tuning of the **NLLB-200-distilled-600M** (No Langua
 Because Odia-German is a rare language pair, a high-quality parallel corpus was built from the ground up:
 1. **Scraping & Filtering:** Extracted 298 articles from leading Odia news platforms ("Sambad" and "Dharitri"). Implemented strict Unicode filtering (U+0B00 to U+0B7F) to isolate authentic Odia script.
 2. **Translation & Validation:** Translated the cleaned corpus into German (2,000 lines via human translation/validation, and 1,676 lines via machine translation + strict human correction), resulting in **3,676 perfect 1:1 aligned sentence pairs**.
+
+<img width="890" height="394" alt="image" src="https://github.com/user-attachments/assets/207975cf-b7de-4a75-86f5-cd79d2f93df1" />
+
 3. **Leakage-Free Splitting:** The unique sentence pairs were split (80% Train, 10% Val, 10% Test) *before* applying bidirectional task prefixes (`translate Odia to German: ` / `translate German to Odia: `). This strict order prevents the model from memorizing A → B in training and being tested on B → A.
+
+<img width="690" height="218" alt="image" src="https://github.com/user-attachments/assets/72e48550-de95-46cb-ab83-831192509f50" />
 
 ---
 
