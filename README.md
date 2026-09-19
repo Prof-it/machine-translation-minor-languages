@@ -220,3 +220,37 @@ If you wish to reproduce this research step-by-step, follow the notebooks in the
 #### [QLoRA Fine-tuned NLLB Bidirectional Translator Application](https://huggingface.co/spaces/abhinandansamal/Adapter-based-Odia-German-Translator)
 
 <img width="1450" height="533" alt="image" src="https://github.com/user-attachments/assets/94380a9e-cfcd-480b-91e5-2c7c0cccce60" />
+
+## 📚 Publication
+
+This repository accompanies the following research:
+
+- **Samal, A. and Lu, T. (2026).** *Enabling Digital Documentation of Odia, a Low-Resource Indo-Aryan Language, through Efficient Bidirectional Odia-German Machine Translation.* The Symposium on Artificial Intelligence for Cultural Heritage and Indigenous Futures (AI4CHIEF), Paris, France. Forthcoming in Springer LNNS.
+
+- **Samal, A. and Lu, T. (2026).** *Parameter-Efficient Adaptation for Low-Resource Machine Translation: An Ablation Study and Benchmark Against Large Language Models.* 9th International Conference on Informatics and Computational Sciences (ICICoS), Semarang, Indonesia. Forthcoming in IEEE Xplore.
+
+### BibTeX
+
+```bibtex
+@inproceedings{samal2026enabling,
+  author    = {Samal, Abhinandan and Lu, Tianxiang},
+  title     = {Enabling Digital Documentation of Odia, a Low-Resource Indo-Aryan Language, through Efficient Bidirectional Odia-German Machine Translation},
+  booktitle = {The Symposium on Artificial Intelligence for Cultural Heritage and Indigenous Futures (AI4CHIEF)},
+  year      = {2026},
+  address   = {Paris, France},
+  month     = apr,
+  publisher = {Springer},
+  note      = {To appear in Springer Lecture Notes in Networks and Systems (LNNS)}
+}
+
+@inproceedings{samal2026parameter,
+  author    = {Samal, Abhinandan and Lu, Tianxiang},
+  title     = {Parameter-Efficient Adaptation for Low-Resource Machine Translation: An Ablation Study and Benchmark Against Large Language Models},
+  booktitle = {2026 9th International Conference on Informatics and Computational Sciences (ICICoS)},
+  year      = {2026},
+  address   = {Semarang, Indonesia},
+  month     = aug,
+  publisher = {IEEE},
+  note      = {Presented 12--13 August 2026; to be published in IEEE Xplore}
+}
+```
